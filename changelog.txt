@@ -1,0 +1,78 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.16
+  Changes:
+    - Made solar panels cheaper
+    - Included the recycler and recipes to recycle used solar structures
+---------------------------------------------------------------------------------------------------
+Version: 0.2.15
+  Changes:
+    - Fixed a introduced bug in the mk2, mk3 and mk4 steam engines now they should work at the right temperature
+---------------------------------------------------------------------------------------------------
+Version: 0.2.14
+  Changes:
+    - compatibility with factorio 0.18.0
+    - small buffs in heat storage
+---------------------------------------------------------------------------------------------------
+Version: 0.2.13
+  Bugfixes:
+    - Fixed issues related to Factorio 0.17.53 collision upgrade rules.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.12
+  Changes:
+    - Added Changelog in correct way
+    - Added Licence in correct way
+---------------------------------------------------------------------------------------------------
+Version: 0.2.11
+  Changes:
+    - Code optimization to use 0.17 new features 
+    - Recipe tweaks to use considerably less copper and iron but more salt    
+  Bugfixes:
+    - Avoid interaction bug with robots
+---------------------------------------------------------------------------------------------------
+Version: 0.2.10
+  Changes:
+    - bugfixes
+---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+  Bugfixes:
+    - Potentially fixing interaction bug with robots, thanks to mrudat
+---------------------------------------------------------------------------------------------------
+Version: 0.2.8
+  Locale:
+    - Introduced German translation, thanks to boeller
+---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+  Bugfixes:
+    - Heat exchangers behavior adjustment
+---------------------------------------------------------------------------------------------------
+Version: 0.2.6
+  Changes:
+    - Added Thumbnail
+---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+  Bugfixes:
+    - Fix basic heat exchangers not working correctly in 0.17
+---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+  Changes:
+    - Renamed folder of mod coherently with mod version
+    - Initial porting to 0.17
+---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+  Changes:
+    - Mod settings (disactivable new steam turbines recipes and heat exchangers recipes)
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+  Changes:
+    - Thermal solar panels sprites
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+  Locale:
+    - Introduced Italian translation
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0 
+  Changes:
+    - Code Optimization 
+    - Decreased warm-up time of solar panels but also their energy storage
+    - Added 3 improved steam engines
+    - Buffed basic heat exchangers
