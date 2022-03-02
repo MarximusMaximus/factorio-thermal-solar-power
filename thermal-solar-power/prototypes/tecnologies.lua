@@ -4,23 +4,23 @@
 temp_effect = {
 	{
 		type = "unlock-recipe",
-		recipe = "CW-basic-heat-pipe",
+		recipe = "tsp-basic-heat-pipe",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-thermal-solar-panel",
+		recipe = "tsp-thermal-solar-panel",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-salt-evaporation-pond",
+		recipe = "tsp-salt-evaporation-pond",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-molten-salt",
+		recipe = "tsp-molten-salt",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-molten-salt2",
+		recipe = "tsp-molten-salt2",
 	},
 
 }
@@ -28,15 +28,15 @@ temp_effect = {
 if settings.startup["heat-exchanger-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-basic-heat-exchanger",
+		recipe = "tsp-basic-heat-exchanger",
 	})
 end
 
 ThermalSolarPowerTec1 =	{
 	type = "technology",
-	name = "CW-thermal-solar-power",
+	name = "tsp-thermal-solar-power",
 	icon_size = 128,
-	icon = "__CW-thermal-solar-power__/graphics/tech/solar-energy.png",
+	icon = "__thermal-solar-power__/graphics/tech/solar-energy.png",
 	effects = temp_effect,
 
 	prerequisites = {"optics"},
@@ -57,7 +57,7 @@ ThermalSolarPowerTec1 =	{
 temp_effect = {
 	{
 		type = "unlock-recipe",
-		recipe = "CW-molten-salt-Heat-Accumulator",
+		recipe = "tsp-molten-salt-heat-accumulator",
 	},
 	{
 		type = "unlock-recipe",
@@ -65,36 +65,36 @@ temp_effect = {
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-thermal-solar-panel2",
+		recipe = "tsp-thermal-solar-panel2",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-recycler",
+		recipe = "tsp-recycler",
 	},
 }
 
 if settings.startup["heat-exchanger-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-basic-heat-exchanger2"
+		recipe = "tsp-basic-heat-exchanger2"
 	})
 end
 
 if settings.startup["steam-turbines-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-steam-engine-2"
+		recipe = "tsp-steam-engine-2"
 	})
 end
 
 ThermalSolarPowerTec2 =	{
 	type = "technology",
-	name = "CW-thermal-solar-power-2",
+	name = "tsp-thermal-solar-power-2",
 	icon_size = 128,
-	icon = "__CW-thermal-solar-power__/graphics/tech/solar-energy.png",
+	icon = "__thermal-solar-power__/graphics/tech/solar-energy.png",
 	upgrade = true,
 	effects = temp_effect,
-	prerequisites = {"CW-thermal-solar-power","steel-processing"},
+	prerequisites = {"tsp-thermal-solar-power","steel-processing"},
 	unit = 
 	{
 		count = 50,
@@ -109,11 +109,11 @@ ThermalSolarPowerTec2 =	{
 temp_effect = {
 	{
 		type = "unlock-recipe",
-		recipe = "CW-molten-salt-Heat-Accumulator2",
+		recipe = "tsp-molten-salt-heat-accumulator2",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-thermal-solar-panel3",
+		recipe = "tsp-thermal-solar-panel3",
 	},
 
 }
@@ -121,25 +121,25 @@ temp_effect = {
 if settings.startup["heat-exchanger-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-basic-heat-exchanger3"
+		recipe = "tsp-basic-heat-exchanger3"
 	})
 end
 
 if settings.startup["steam-turbines-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-steam-engine-3"
+		recipe = "tsp-steam-engine-3"
 	})
 end
 	
 ThermalSolarPowerTec3 = {
 	type = "technology",
-	name = "CW-thermal-solar-power-3",
+	name = "tsp-thermal-solar-power-3",
 	icon_size = 128,
-	icon = "__CW-thermal-solar-power__/graphics/tech/solar-energy.png",
+	icon = "__thermal-solar-power__/graphics/tech/solar-energy.png",
 	upgrade = true,
 	effects = temp_effect,
-	prerequisites = {"CW-thermal-solar-power-2"},
+	prerequisites = {"tsp-thermal-solar-power-2"},
 	unit = 
 	{
 		count = 80,
@@ -154,11 +154,11 @@ ThermalSolarPowerTec3 = {
 temp_effect = {
 	{
 		type = "unlock-recipe",
-		recipe = "CW-molten-salt-Heat-Accumulator3",
+		recipe = "tsp-molten-salt-heat-accumulator3",
 	},
 	{
 		type = "unlock-recipe",
-		recipe = "CW-thermal-solar-panel4",
+		recipe = "tsp-thermal-solar-panel4",
 	},
 
 }
@@ -166,25 +166,25 @@ temp_effect = {
 if settings.startup["heat-exchanger-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-basic-heat-exchanger4"
+		recipe = "tsp-basic-heat-exchanger4"
 	})
 end
 
 if settings.startup["steam-turbines-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
-		recipe = "CW-steam-engine-4"
+		recipe = "tsp-steam-engine-4"
 	})
 end
 	
 ThermalSolarPowerTec4 =	{
 	type = "technology",
-	name = "CW-thermal-solar-power-4",
+	name = "tsp-thermal-solar-power-4",
 	icon_size = 128,
-	icon = "__CW-thermal-solar-power__/graphics/tech/solar-energy.png",
+	icon = "__thermal-solar-power__/graphics/tech/solar-energy.png",
 	upgrade = true,
 	effects = temp_effect,
-	prerequisites = {"CW-thermal-solar-power-3"},
+	prerequisites = {"tsp-thermal-solar-power-3"},
 	unit = 
 	{
 		count = 100,

@@ -3,39 +3,39 @@ data:extend({
 	
 	{
 		type = "recipe-category",
-		name = "CW-evaporation"
+		name = "tsp-evaporation"
 	},
 	{
 		type = "recipe-category",
-		name = "CW-recycle-solar-items"
+		name = "tsp-recycle-solar-items"
 	},
 
 	{
 		type = "recipe",
-		name = "CW-molten-salt",
+		name = "tsp-molten-salt",
 		enabled = false,
 		category = "crafting-with-fluid",
 		energy_required = 20,
 		ingredients = {{type="fluid", name="water", amount=25}},
-		result = "CW-molten-salt"
+		result = "tsp-molten-salt"
 	},
 
 	{
 		type = "recipe",
-		name = "CW-molten-salt2",
+		name = "tsp-molten-salt2",
 		enabled = false,
 		emissions_multiplier = 0,
-		category = "CW-evaporation",
+		category = "tsp-evaporation",
 		energy_required = 20,
 		ingredients = {{type = "fluid", name = "water", amount = 25}},
 		hidden = true,
-		results = {{type = "item" , name = "CW-molten-salt", amount = 1}}
+		results = {{type = "item" , name = "tsp-molten-salt", amount = 1}}
 
 	},
 
 	{
 		type = "recipe",
-		name = "CW-recycler",
+		name = "tsp-recycler",
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -44,12 +44,12 @@ data:extend({
 			{"iron-gear-wheel", 10},
 			{"electronic-circuit",5},
 		},
-		result = "CW-recycler",
+		result = "tsp-recycler",
 	},
 
 	{
 		type = "recipe",
-		name = "CW-basic-heat-pipe",
+		name = "tsp-basic-heat-pipe",
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -57,19 +57,19 @@ data:extend({
 			{"iron-plate", 3}, 
 			{"copper-plate", 3}
 		},
-		result = "CW-basic-heat-pipe",
+		result = "tsp-basic-heat-pipe",
 	},
 	{
 		type = "recipe",
-		name = "CW-recycle-basic-heat-pipe",
+		name = "tsp-recycle-basic-heat-pipe",
 		icon = "__base__/graphics/icons/heat-pipe.png",
 		icon_size = 64,		
 		subgroup = "energy",
 		enabled = true,
 		hidden = true,
-		category = "CW-recycle-solar-items",
+		category = "tsp-recycle-solar-items",
 		energy_required = 1,
-		ingredients = {{"CW-basic-heat-pipe",1}},
+		ingredients = {{"tsp-basic-heat-pipe",1}},
 		
 		results = {
 			{"iron-plate", 3}, 
@@ -79,169 +79,169 @@ data:extend({
 	
 	{
 		type = "recipe",
-		name = "CW-molten-salt-Heat-Accumulator",
+		name = "tsp-molten-salt-heat-accumulator",
 		enabled = false,
 		energy_required = 5,
-		ingredients = {{"steel-plate", 5}, {"CW-basic-heat-pipe", 4}, {"CW-molten-salt",20}},
-		result = "CW-molten-salt-Heat-Accumulator"
+		ingredients = {{"steel-plate", 5}, {"tsp-basic-heat-pipe", 4}, {"tsp-molten-salt",20}},
+		result = "tsp-molten-salt-heat-accumulator"
 	},
 
 	{
 		type = "recipe",
-		name = "CW-recycle-Heat-Accumulator",
+		name = "tsp-recycle-Heat-Accumulator",
 		enabled = true,
-		icon = "__CW-thermal-solar-power__/graphics/icons/heat-accumulator1.png",
+		icon = "__thermal-solar-power__/graphics/icons/heat-accumulator1.png",
 		icon_size = 32,
 		subgroup = "energy",
 		energy_required = 1,
 		hidden = true,
-		category = "CW-recycle-solar-items",
-		ingredients =  {{"CW-molten-salt-Heat-Accumulator",1}},
+		category = "tsp-recycle-solar-items",
+		ingredients =  {{"tsp-molten-salt-heat-accumulator",1}},
 		results = {{"steel-plate", 5}, {"iron-plate", 12},{"copper-plate", 12}}
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-molten-salt-Heat-Accumulator2",
+		name = "tsp-molten-salt-heat-accumulator2",
 		enabled = false,
 		energy_required = 5,
-		ingredients = {{"CW-molten-salt-Heat-Accumulator", 2},{"steel-plate",6},{"heat-pipe",2},{"CW-molten-salt",40}},
-		result = "CW-molten-salt-Heat-Accumulator2"
+		ingredients = {{"tsp-molten-salt-heat-accumulator", 2},{"steel-plate",6},{"heat-pipe",2},{"tsp-molten-salt",40}},
+		result = "tsp-molten-salt-heat-accumulator2"
 	},
 
 	{
 		type = "recipe",
-		name = "CW-recycle-Heat-Accumulator2",
+		name = "tsp-recycle-Heat-Accumulator2",
 		enabled = true,
-		icon = "__CW-thermal-solar-power__/graphics/icons/heat-accumulator2.png",
+		icon = "__thermal-solar-power__/graphics/icons/heat-accumulator2.png",
 		icon_size = 32,
 		subgroup = "energy",
 		energy_required = 1,
 		hidden = true,
-		category = "CW-recycle-solar-items",
-		ingredients =  {{"CW-molten-salt-Heat-Accumulator2",1}},
+		category = "tsp-recycle-solar-items",
+		ingredients =  {{"tsp-molten-salt-heat-accumulator2",1}},
 		results = {{"steel-plate", 36}, {"iron-plate", 24},{"copper-plate", 64},}
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-molten-salt-Heat-Accumulator3",
+		name = "tsp-molten-salt-heat-accumulator3",
 		enabled = false,
 		energy_required = 5,
-		ingredients = {{"CW-molten-salt-Heat-Accumulator2", 2},{"steel-plate",10},{"heat-pipe",2},{"CW-molten-salt",60}},
-		result = "CW-molten-salt-Heat-Accumulator3"
+		ingredients = {{"tsp-molten-salt-heat-accumulator2", 2},{"steel-plate",10},{"heat-pipe",2},{"tsp-molten-salt",60}},
+		result = "tsp-molten-salt-heat-accumulator3"
 	},
 
 	{
 		type = "recipe",
-		name = "CW-recycle-Heat-Accumulator3",
+		name = "tsp-recycle-Heat-Accumulator3",
 		enabled = true,
-		icon = "__CW-thermal-solar-power__/graphics/icons/heat-accumulator3.png",
+		icon = "__thermal-solar-power__/graphics/icons/heat-accumulator3.png",
 		icon_size = 32,
 		subgroup = "energy",
 		energy_required = 1,
 		hidden = true,
-		category = "CW-recycle-solar-items",
-		ingredients =  {{"CW-molten-salt-Heat-Accumulator3",1}},
+		category = "tsp-recycle-solar-items",
+		ingredients =  {{"tsp-molten-salt-heat-accumulator3",1}},
 		results = {{"steel-plate", 102}, {"iron-plate", 48},{"copper-plate", 168},}
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-salt-evaporation-pond",
+		name = "tsp-salt-evaporation-pond",
 		enabled = false,
 		energy_required = 5,
 		ingredients = {{"iron-plate", 10}, {"copper-plate", 10}, {"pipe",5}},
-		result = "CW-salt-evaporation-pond"
+		result = "tsp-salt-evaporation-pond"
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-thermal-solar-panel",
+		name = "tsp-thermal-solar-panel",
 		enabled = false,
 		energy_required = 5,
-		ingredients = {{"iron-plate", 4}, {"copper-plate", 10}, {"CW-basic-heat-pipe",4}},
-		result = "CW-thermal-solar-panel"
+		ingredients = {{"iron-plate", 4}, {"copper-plate", 10}, {"tsp-basic-heat-pipe",4}},
+		result = "tsp-thermal-solar-panel"
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-thermal-solar-panel2",
+		name = "tsp-thermal-solar-panel2",
 		enabled = false,
 		energy_required = 7,
-		ingredients = {{"steel-plate", 2}, {"CW-thermal-solar-panel", 1}, {"electronic-circuit",2},{"CW-molten-salt",15}},
-		result = "CW-thermal-solar-panel2"
+		ingredients = {{"steel-plate", 2}, {"tsp-thermal-solar-panel", 1}, {"electronic-circuit",2},{"tsp-molten-salt",15}},
+		result = "tsp-thermal-solar-panel2"
 	},
 	{
 		type = "recipe",
-		name = "CW-thermal-solar-panel3",
+		name = "tsp-thermal-solar-panel3",
 		enabled = false,
 		energy_required = 7,
-		ingredients = {{"steel-plate", 4}, {"CW-thermal-solar-panel2", 1},{"CW-molten-salt",30}},
-		result = "CW-thermal-solar-panel3"
+		ingredients = {{"steel-plate", 4}, {"tsp-thermal-solar-panel2", 1},{"tsp-molten-salt",30}},
+		result = "tsp-thermal-solar-panel3"
 	},
 	{
 		type = "recipe",
-		name = "CW-thermal-solar-panel4",
+		name = "tsp-thermal-solar-panel4",
 		enabled = false,
 		energy_required = 7,
-		ingredients = {{"steel-plate", 6}, {"CW-thermal-solar-panel3", 1},{"CW-molten-salt",40}},
-		result = "CW-thermal-solar-panel4"
+		ingredients = {{"steel-plate", 6}, {"tsp-thermal-solar-panel3", 1},{"tsp-molten-salt",40}},
+		result = "tsp-thermal-solar-panel4"
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-recycle-solar-panel",
-		icon = "__CW-thermal-solar-power__/graphics/icons/solar-panel1.png",
+		name = "tsp-recycle-solar-panel",
+		icon = "__thermal-solar-power__/graphics/icons/solar-panel1.png",
 		icon_size = 32,		
 		subgroup = "energy",
 		enabled = true,
 		hidden = true,
-		category = "CW-recycle-solar-items",
+		category = "tsp-recycle-solar-items",
 		energy_required = 1,
-		ingredients = {{"CW-thermal-solar-panel", 1}},
+		ingredients = {{"tsp-thermal-solar-panel", 1}},
 		results = {{"iron-plate", 16}, {"copper-plate", 22},},
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-recycle-solar-panel2",
-		icon = "__CW-thermal-solar-power__/graphics/icons/solar-panel2.png",
+		name = "tsp-recycle-solar-panel2",
+		icon = "__thermal-solar-power__/graphics/icons/solar-panel2.png",
 		icon_size = 32,		
 		subgroup = "energy",
 		enabled = true,
 		hidden = true,
-		category = "CW-recycle-solar-items",
+		category = "tsp-recycle-solar-items",
 		energy_required = 1,
-		ingredients = {{"CW-thermal-solar-panel2", 1}},
+		ingredients = {{"tsp-thermal-solar-panel2", 1}},
 		results = {{"steel-plate", 2},{"electronic-circuit",2},{"iron-plate", 16}, {"copper-plate", 22},},
 	},
 	
 	{
 		type = "recipe",
-		name = "CW-recycle-solar-panel3",
+		name = "tsp-recycle-solar-panel3",
 		enabled = true,
-		icon = "__CW-thermal-solar-power__/graphics/icons/solar-panel3.png",
+		icon = "__thermal-solar-power__/graphics/icons/solar-panel3.png",
 		icon_size = 32,		
 		subgroup = "energy",
 		energy_required = 1,
 		hidden = true,
-		category = "CW-recycle-solar-items",
-		ingredients = {{"CW-thermal-solar-panel3", 1}},
+		category = "tsp-recycle-solar-items",
+		ingredients = {{"tsp-thermal-solar-panel3", 1}},
 		results = {{"steel-plate", 6},{"electronic-circuit",2},{"iron-plate", 16}, {"copper-plate", 22},},
 	},
 
 	{
 		type = "recipe",
-		name = "CW-recycle-solar-panel4",
+		name = "tsp-recycle-solar-panel4",
 		enabled = true,
-		icon = "__CW-thermal-solar-power__/graphics/icons/solar-panel4.png",
+		icon = "__thermal-solar-power__/graphics/icons/solar-panel4.png",
 		icon_size = 32,		
 		subgroup = "energy",
 		energy_required = 1,
 		hidden = true,
-		category = "CW-recycle-solar-items",
-		ingredients = {{"CW-thermal-solar-panel4", 1}},
+		category = "tsp-recycle-solar-items",
+		ingredients = {{"tsp-thermal-solar-panel4", 1}},
 		results = {{"steel-plate", 12},{"electronic-circuit",2},{"iron-plate", 16}, {"copper-plate", 22},},
 	},
 	
@@ -254,7 +254,7 @@ if settings.startup["heat-exchanger-enabled"].value then
 	data:extend({
 		{
 			type = "recipe",
-			name = "CW-basic-heat-exchanger",
+			name = "tsp-basic-heat-exchanger",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
@@ -263,95 +263,95 @@ if settings.startup["heat-exchanger-enabled"].value then
 				{"copper-plate", 50}, 
 				{"pipe",10}
 			},
-			result = "CW-basic-heat-exchanger",
+			result = "tsp-basic-heat-exchanger",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-heat-exchanger",
+			name = "tsp-recycle-heat-exchanger",
 			enabled = true,
-			icon = "__CW-thermal-solar-power__/graphics/icons/heat-boiler1.png",
+			icon = "__thermal-solar-power__/graphics/icons/heat-boiler1.png",
 			icon_size = 32,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-basic-heat-exchanger", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-basic-heat-exchanger", 1}},
 			results = {{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
 		},
 		{
 			type = "recipe",
-			name = "CW-basic-heat-exchanger2",
+			name = "tsp-basic-heat-exchanger2",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
 			{
-				{"CW-basic-heat-exchanger", 1}, 
+				{"tsp-basic-heat-exchanger", 1}, 
 				{"steel-plate",10}		
 			},
-			result = "CW-basic-heat-exchanger2",
+			result = "tsp-basic-heat-exchanger2",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-heat-exchanger2",
+			name = "tsp-recycle-heat-exchanger2",
 			enabled = true,
-			icon = "__CW-thermal-solar-power__/graphics/icons/heat-boiler2.png",
+			icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png",
 			icon_size = 32,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-basic-heat-exchanger2", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-basic-heat-exchanger2", 1}},
 			results = {{"steel-plate",10},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
 		},		{
 			type = "recipe",
-			name = "CW-basic-heat-exchanger3",
+			name = "tsp-basic-heat-exchanger3",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
 			{
-				{"CW-basic-heat-exchanger2", 1}, 
+				{"tsp-basic-heat-exchanger2", 1}, 
 				{"steel-plate",10}
 			},
-			result = "CW-basic-heat-exchanger3",
+			result = "tsp-basic-heat-exchanger3",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-heat-exchanger3",
+			name = "tsp-recycle-heat-exchanger3",
 			enabled = true,
-			icon = "__CW-thermal-solar-power__/graphics/icons/heat-boiler3.png",
+			icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png",
 			icon_size = 32,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-basic-heat-exchanger3", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-basic-heat-exchanger3", 1}},
 			results = {{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
 		},
 		
 		{
 			type = "recipe",
-			name = "CW-basic-heat-exchanger4",
+			name = "tsp-basic-heat-exchanger4",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
 			{
-				{"CW-basic-heat-exchanger3", 1}, 
+				{"tsp-basic-heat-exchanger3", 1}, 
 				{"plastic-bar",10}
 			},
-			result = "CW-basic-heat-exchanger4",
+			result = "tsp-basic-heat-exchanger4",
 		},
 
 		{
 			type = "recipe",
-			name = "CW-recycle-heat-exchanger4",
+			name = "tsp-recycle-heat-exchanger4",
 			enabled = true,
-			icon = "__CW-thermal-solar-power__/graphics/icons/heat-boiler4.png",
+			icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png",
 			icon_size = 32,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-basic-heat-exchanger4", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-basic-heat-exchanger4", 1}},
 			results = {{"plastic-bar",10},{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
 		},
 		
@@ -363,7 +363,7 @@ if settings.startup["steam-turbines-enabled"].value then
 	data:extend({
 		{
 			type = "recipe",
-			name = "CW-steam-engine-2",
+			name = "tsp-steam-engine-2",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
@@ -372,71 +372,71 @@ if settings.startup["steam-turbines-enabled"].value then
 				{"pipe",5},
 				{"steel-plate",10}
 			},
-			result = "CW-steam-engine-2",
+			result = "tsp-steam-engine-2",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-steam-engine-2",
+			name = "tsp-recycle-steam-engine-2",
 			enabled = true,
 			icon = "__base__/graphics/icons/steam-engine.png",
 			icon_size = 64,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-steam-engine-2", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-steam-engine-2", 1}},
 			results = {{"steel-plate",10},{"pipe",5},{"iron-plate",10},{"iron-gear-wheel",8}},
 		},		
 		{
 			type = "recipe",
-			name = "CW-steam-engine-3",
+			name = "tsp-steam-engine-3",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
 			{
-				{"CW-steam-engine-2", 1}, 
+				{"tsp-steam-engine-2", 1}, 
 				{"electronic-circuit",1},
 				{"steel-plate",10}		
 			},
-			result = "CW-steam-engine-3",
+			result = "tsp-steam-engine-3",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-steam-engine-3",
+			name = "tsp-recycle-steam-engine-3",
 			enabled = true,
 			icon = "__base__/graphics/icons/steam-engine.png",
 			icon_size = 64,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-steam-engine-3", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-steam-engine-3", 1}},
 			results = {{"steel-plate",20},{"electronic-circuit",1},{"pipe",5},{"iron-plate",10},{"iron-gear-wheel",8}},
 		},
 		{
 			type = "recipe",
-			name = "CW-steam-engine-4",
+			name = "tsp-steam-engine-4",
 			enabled = false,
 			energy_required = 5,
 			ingredients =
 			{
-				{"CW-steam-engine-3", 1}, 
+				{"tsp-steam-engine-3", 1}, 
 				{"electronic-circuit",1},
 				{"steel-plate",10}		
 			},
-			result = "CW-steam-engine-4",
+			result = "tsp-steam-engine-4",
 		},
 		{
 			type = "recipe",
-			name = "CW-recycle-steam-engine-4",
+			name = "tsp-recycle-steam-engine-4",
 			enabled = true,
 			icon = "__base__/graphics/icons/steam-engine.png",
 			icon_size = 64,		
 			subgroup = "energy",
 			energy_required = 1,
 			hidden = true,
-			category = "CW-recycle-solar-items",
-			ingredients = {{"CW-steam-engine-4", 1}},
+			category = "tsp-recycle-solar-items",
+			ingredients = {{"tsp-steam-engine-4", 1}},
 			results = {{"steel-plate",30},{"electronic-circuit",2},{"pipe",5},{"iron-plate",10},{"iron-gear-wheel",8}},
 		},
 	})

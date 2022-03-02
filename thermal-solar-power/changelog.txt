@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.17
+  Changes:
+    - Merged in bobpower compatiblity from CWTSP_balance by Caxx (Public Domain)
+    - Fixed descriptions of heat exchangers to correctly display their temperatures.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.16
   Changes:
     - Made solar panels cheaper

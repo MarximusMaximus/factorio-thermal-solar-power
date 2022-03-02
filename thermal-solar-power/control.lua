@@ -8,18 +8,18 @@ local function on_built(event)
 	end
 	
 	
-	if entity.name == "CW-thermal-solar-panel" or 
-		entity.name == "CW-thermal-solar-panel2" or 
-		entity.name == "CW-thermal-solar-panel3" or 
-		entity.name == "CW-thermal-solar-panel4" then
+	if entity.name == "tsp-thermal-solar-panel" or 
+		entity.name == "tsp-thermal-solar-panel2" or 
+		entity.name == "tsp-thermal-solar-panel3" or 
+		entity.name == "tsp-thermal-solar-panel4" then
 			global.CW_Thermal_solar_panel_table[entity.unit_number] = entity
 			entity.temperature = temperature
 
 	end
 	
-	if entity.name == "CW-molten-salt-Heat-Accumulator" or 
-		entity.name == "CW-molten-salt-Heat-Accumulator2" or 
-		entity.name == "CW-molten-salt-Heat-Accumulator3" then
+	if entity.name == "tsp-molten-salt-heat-accumulator" or 
+		entity.name == "tsp-molten-salt-heat-accumulator2" or 
+		entity.name == "tsp-molten-salt-heat-accumulator3" then
 			entity.temperature = temperature
 	end
 end
@@ -27,10 +27,10 @@ end
 local function on_remove(event)
 	local entity = event.entity
 	
-	if entity.name == "CW-thermal-solar-panel" or 
-		entity.name == "CW-thermal-solar-panel2" or 
-		entity.name == "CW-thermal-solar-panel3" or 
-		entity.name == "CW-thermal-solar-panel4" and 
+	if entity.name == "tsp-thermal-solar-panel" or 
+		entity.name == "tsp-thermal-solar-panel2" or 
+		entity.name == "tsp-thermal-solar-panel3" or 
+		entity.name == "tsp-thermal-solar-panel4" and 
 		global.CW_Thermal_solar_panel_table ~= nil then
 			global.CW_Thermal_solar_panel_table[entity.unit_number] = nil
 	end	
@@ -79,13 +79,13 @@ script.on_event({defines.events.on_put_item},function (event)
 	for i , entity in pairs(entities) do
 		if entity ~= nil and entity.valid then 
 			
-			if entity.name == "CW-thermal-solar-panel" or 
-			entity.name == "CW-thermal-solar-panel2" or 
-			entity.name == "CW-thermal-solar-panel3" or 
-			entity.name == "CW-thermal-solar-panel4" or
-			entity.name == "CW-molten-salt-Heat-Accumulator" or 
-			entity.name == "CW-molten-salt-Heat-Accumulator2" or 
-			entity.name == "CW-molten-salt-Heat-Accumulator3" then
+			if entity.name == "tsp-thermal-solar-panel" or 
+			entity.name == "tsp-thermal-solar-panel2" or 
+			entity.name == "tsp-thermal-solar-panel3" or 
+			entity.name == "tsp-thermal-solar-panel4" or
+			entity.name == "tsp-molten-salt-heat-accumulator" or 
+			entity.name == "tsp-molten-salt-heat-accumulator2" or 
+			entity.name == "tsp-molten-salt-heat-accumulator3" then
 				temperature = entity.temperature
 			end
 		end
