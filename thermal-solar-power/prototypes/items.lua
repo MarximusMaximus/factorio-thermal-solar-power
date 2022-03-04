@@ -155,41 +155,46 @@ if settings.startup["heat-exchanger-enabled"].value then
 			place_result = "tsp-basic-heat-exchanger",
 			stack_size = 20,
 		},
-		{
-			type = "item",
-			name = "tsp-basic-heat-exchanger2",
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png",
-			icon_size = 32,			
-			subgroup = "energy",
-			order = "f",
-			place_result = "tsp-basic-heat-exchanger2",
-			stack_size = 20,
-		},
-		{
-			type = "item",
-			name = "tsp-basic-heat-exchanger3",
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png",
-			icon_size = 32,			
-			subgroup = "energy",
-			order = "f",
-			place_result = "tsp-basic-heat-exchanger3",
-			stack_size = 20,
-		},
-		{
-			type = "item",
-			name = "tsp-basic-heat-exchanger4",
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png",
-			icon_size = 32,			
-			subgroup = "energy",
-			order = "f",
-			place_result = "tsp-basic-heat-exchanger4",
-			stack_size = 20,
-		}
 	})
+
+	if not mods["bobpower"] then
+		data:extend({
+			{
+				type = "item",
+				name = "tsp-basic-heat-exchanger2",
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png",
+				icon_size = 32,			
+				subgroup = "energy",
+				order = "f",
+				place_result = "tsp-basic-heat-exchanger2",
+				stack_size = 20,
+			},
+			{
+				type = "item",
+				name = "tsp-basic-heat-exchanger3",
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png",
+				icon_size = 32,			
+				subgroup = "energy",
+				order = "f",
+				place_result = "tsp-basic-heat-exchanger3",
+				stack_size = 20,
+			},
+			{
+				type = "item",
+				name = "tsp-basic-heat-exchanger4",
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png",
+				icon_size = 32,			
+				subgroup = "energy",
+				order = "f",
+				place_result = "tsp-basic-heat-exchanger4",
+				stack_size = 20,
+			}
+		})
+	end
 end
 
 -- ALL STEAM TURBINES
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 	data:extend({
 		{
 			type = "item",

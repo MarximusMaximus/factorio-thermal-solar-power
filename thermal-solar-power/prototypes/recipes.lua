@@ -278,88 +278,91 @@ if settings.startup["heat-exchanger-enabled"].value then
 			ingredients = {{"tsp-basic-heat-exchanger", 1}},
 			results = {{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
 		},
-		{
-			type = "recipe",
-			name = "tsp-basic-heat-exchanger2",
-			enabled = false,
-			energy_required = 5,
-			ingredients =
-			{
-				{"tsp-basic-heat-exchanger", 1}, 
-				{"steel-plate",10}		
-			},
-			result = "tsp-basic-heat-exchanger2",
-		},
-		{
-			type = "recipe",
-			name = "tsp-recycle-heat-exchanger2",
-			enabled = true,
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png",
-			icon_size = 32,		
-			subgroup = "energy",
-			energy_required = 1,
-			hidden = true,
-			category = "tsp-recycle-solar-items",
-			ingredients = {{"tsp-basic-heat-exchanger2", 1}},
-			results = {{"steel-plate",10},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
-		},		{
-			type = "recipe",
-			name = "tsp-basic-heat-exchanger3",
-			enabled = false,
-			energy_required = 5,
-			ingredients =
-			{
-				{"tsp-basic-heat-exchanger2", 1}, 
-				{"steel-plate",10}
-			},
-			result = "tsp-basic-heat-exchanger3",
-		},
-		{
-			type = "recipe",
-			name = "tsp-recycle-heat-exchanger3",
-			enabled = true,
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png",
-			icon_size = 32,		
-			subgroup = "energy",
-			energy_required = 1,
-			hidden = true,
-			category = "tsp-recycle-solar-items",
-			ingredients = {{"tsp-basic-heat-exchanger3", 1}},
-			results = {{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
-		},
-		
-		{
-			type = "recipe",
-			name = "tsp-basic-heat-exchanger4",
-			enabled = false,
-			energy_required = 5,
-			ingredients =
-			{
-				{"tsp-basic-heat-exchanger3", 1}, 
-				{"plastic-bar",10}
-			},
-			result = "tsp-basic-heat-exchanger4",
-		},
-
-		{
-			type = "recipe",
-			name = "tsp-recycle-heat-exchanger4",
-			enabled = true,
-			icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png",
-			icon_size = 32,		
-			subgroup = "energy",
-			energy_required = 1,
-			hidden = true,
-			category = "tsp-recycle-solar-items",
-			ingredients = {{"tsp-basic-heat-exchanger4", 1}},
-			results = {{"plastic-bar",10},{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
-		},
-		
 	})
+
+	if not mods["bobpower"] then
+		data:extend({
+			{
+				type = "recipe",
+				name = "tsp-basic-heat-exchanger2",
+				enabled = false,
+				energy_required = 5,
+				ingredients =
+				{
+					{"tsp-basic-heat-exchanger", 1}, 
+					{"steel-plate",10}		
+				},
+				result = "tsp-basic-heat-exchanger2",
+			},
+			{
+				type = "recipe",
+				name = "tsp-recycle-heat-exchanger2",
+				enabled = true,
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png",
+				icon_size = 32,		
+				subgroup = "energy",
+				energy_required = 1,
+				hidden = true,
+				category = "tsp-recycle-solar-items",
+				ingredients = {{"tsp-basic-heat-exchanger2", 1}},
+				results = {{"steel-plate",10},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
+			},
+			{
+				type = "recipe",
+				name = "tsp-basic-heat-exchanger3",
+				enabled = false,
+				energy_required = 5,
+				ingredients =
+				{
+					{"tsp-basic-heat-exchanger2", 1}, 
+					{"steel-plate",10}
+				},
+				result = "tsp-basic-heat-exchanger3",
+			},
+			{
+				type = "recipe",
+				name = "tsp-recycle-heat-exchanger3",
+				enabled = true,
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png",
+				icon_size = 32,		
+				subgroup = "energy",
+				energy_required = 1,
+				hidden = true,
+				category = "tsp-recycle-solar-items",
+				ingredients = {{"tsp-basic-heat-exchanger3", 1}},
+				results = {{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
+			},
+			{
+				type = "recipe",
+				name = "tsp-basic-heat-exchanger4",
+				enabled = false,
+				energy_required = 5,
+				ingredients =
+				{
+					{"tsp-basic-heat-exchanger3", 1}, 
+					{"plastic-bar",10}
+				},
+				result = "tsp-basic-heat-exchanger4",
+			},
+			{
+				type = "recipe",
+				name = "tsp-recycle-heat-exchanger4",
+				enabled = true,
+				icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png",
+				icon_size = 32,		
+				subgroup = "energy",
+				energy_required = 1,
+				hidden = true,
+				category = "tsp-recycle-solar-items",
+				ingredients = {{"tsp-basic-heat-exchanger4", 1}},
+				results = {{"plastic-bar",10},{"steel-plate",20},{"iron-plate", 20}, {"copper-plate", 50},{"pipe",10},},
+			},
+		})
+	end
 end
 
 -- ALL STEAM TURBINES
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 	data:extend({
 		{
 			type = "recipe",

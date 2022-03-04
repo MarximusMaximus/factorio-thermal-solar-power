@@ -291,70 +291,76 @@ if settings.startup["heat-exchanger-enabled"].value then
 
 	local HeatExchanger = table.deepcopy(data.raw.boiler["heat-exchanger"])
 	HeatExchanger.name = "tsp-basic-heat-exchanger"
-	HeatExchanger.icon = "__thermal-solar-power__/graphics/icons/heat-boiler1.png"	
+	HeatExchanger.icon = "__thermal-solar-power__/graphics/icons/heat-boiler1.png"
 	HeatExchanger.icon_size = 32
 	HeatExchanger.target_temperature = 165.0
 	HeatExchanger.energy_source.min_working_temperature = 165.0
 	HeatExchanger.energy_source.min_temperature_gradient = 1 -- should be something between 0.001 and 1
-	HeatExchanger.energy_source.max_temperature = 1000.0	
+	HeatExchanger.energy_source.max_temperature = 225
     HeatExchanger.energy_source.specific_heat = "100KJ"
-    HeatExchanger.energy_source.max_transfer = "6000kW"     
+    HeatExchanger.energy_source.max_transfer = "6000kW"
 	HeatExchanger.output_fluid_box.base_area = 10
 	HeatExchanger.energy_consumption = "1.8MW"
-	HeatExchanger.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger"} 
-	HeatExchanger.fast_replaceable_group = "tsp-basic-heat-exchangers"
-	HeatExchanger.next_upgrade = "tsp-basic-heat-exchanger2"	
+	HeatExchanger.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger"}
+	HeatExchanger.fast_replaceable_group = "boiler"
 
-	local HeatExchanger2 = table.deepcopy(data.raw.boiler["heat-exchanger"])
-	HeatExchanger2.name = "tsp-basic-heat-exchanger2"
-	HeatExchanger2.icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png"
-	HeatExchanger2.icon_size = 32
-	HeatExchanger2.output_fluid_box.base_area = 15
-	HeatExchanger2.target_temperature = 250
-	HeatExchanger2.energy_source.min_working_temperature = 250.0
-	HeatExchanger2.energy_source.min_temperature_gradient = 1
-	HeatExchanger2.energy_source.max_temperature = 1000.0	
-    HeatExchanger2.energy_source.specific_heat = "120KJ"
-    HeatExchanger2.energy_source.max_transfer = "7200kW"
-	HeatExchanger2.energy_consumption = "3.5MW"
-	HeatExchanger2.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger2"}
-	HeatExchanger2.fast_replaceable_group = "tsp-basic-heat-exchangers"
-	HeatExchanger2.next_upgrade = "tsp-basic-heat-exchanger3"
+	if not mods["bobpower"] then
+		HeatExchanger.next_upgrade = "tsp-basic-heat-exchanger2"
 
-	local HeatExchanger3 = table.deepcopy(data.raw.boiler["heat-exchanger"])
-	HeatExchanger3.name = "tsp-basic-heat-exchanger3"
-	HeatExchanger3.icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png"
-	HeatExchanger3.icon_size = 32
-	HeatExchanger3.target_temperature = 335.0
-	HeatExchanger3.energy_source.min_working_temperature = 335.0
-	HeatExchanger3.energy_source.min_temperature_gradient = 1
-	HeatExchanger3.energy_source.max_temperature = 1000.0	
-    HeatExchanger3.energy_source.specific_heat = "140KJ"
-    HeatExchanger3.energy_source.max_transfer = "8400kW"
-	HeatExchanger3.output_fluid_box.base_area = 20
-	HeatExchanger3.energy_consumption = "5.8MW"
-	HeatExchanger3.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger3"}
-	HeatExchanger3.fast_replaceable_group = "tsp-basic-heat-exchangers"
-	HeatExchanger3.next_upgrade = "tsp-basic-heat-exchanger4"
+		local HeatExchanger2 = table.deepcopy(data.raw.boiler["heat-exchanger"])
+		HeatExchanger2.name = "tsp-basic-heat-exchanger2"
+		HeatExchanger2.icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png"
+		HeatExchanger2.icon_size = 32
+		HeatExchanger2.output_fluid_box.base_area = 15
+		HeatExchanger2.target_temperature = 315
+		HeatExchanger2.energy_source.min_working_temperature = 315
+		HeatExchanger2.energy_source.min_temperature_gradient = 1
+		HeatExchanger2.energy_source.max_temperature = 380
+		HeatExchanger2.energy_source.specific_heat = "120KJ"
+		HeatExchanger2.energy_source.max_transfer = "7200kW"
+		HeatExchanger2.energy_consumption = "3.6MW"
+		HeatExchanger2.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger2"}
+		HeatExchanger2.fast_replaceable_group = "boiler"
+		HeatExchanger2.next_upgrade = "tsp-basic-heat-exchanger3"
 
-	local HeatExchanger4 = table.deepcopy(data.raw.boiler["heat-exchanger"])
-	HeatExchanger4.name = "tsp-basic-heat-exchanger4"
-	HeatExchanger4.icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png"
-	HeatExchanger4.icon_size = 32
-	HeatExchanger4.target_temperature = 420.0
-	HeatExchanger4.energy_source.min_working_temperature = 420.0
-	HeatExchanger4.energy_source.min_temperature_gradient = 1
-	HeatExchanger4.energy_source.max_temperature = 1000.0	
-    HeatExchanger4.energy_source.specific_heat = "160KJ"
-    HeatExchanger4.energy_source.max_transfer = "9600kW"
-	HeatExchanger4.output_fluid_box.base_area = 25
-	HeatExchanger4.energy_consumption = "8MW"
-	HeatExchanger4.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger4"}
-	HeatExchanger4.fast_replaceable_group = "tsp-basic-heat-exchangers"
-	HeatExchanger4.next_upgrade = ""
-	
-	data:extend({HeatExchanger,HeatExchanger2,HeatExchanger3,HeatExchanger4})
+		local HeatExchanger3 = table.deepcopy(data.raw.boiler["heat-exchanger"])
+		HeatExchanger3.name = "tsp-basic-heat-exchanger3"
+		HeatExchanger3.icon = "__thermal-solar-power__/graphics/icons/heat-boiler3.png"
+		HeatExchanger3.icon_size = 32
+		HeatExchanger3.target_temperature = 465.0
+		HeatExchanger3.energy_source.min_working_temperature = 465.0
+		HeatExchanger3.energy_source.min_temperature_gradient = 1
+		HeatExchanger3.energy_source.max_temperature = 565.0
+		HeatExchanger3.energy_source.specific_heat = "140KJ"
+		HeatExchanger3.energy_source.max_transfer = "8400kW"
+		HeatExchanger3.output_fluid_box.base_area = 20
+		HeatExchanger3.energy_consumption = "5.4MW"
+		HeatExchanger3.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger3"}
+		HeatExchanger3.fast_replaceable_group = "boiler"
+		HeatExchanger3.next_upgrade = "tsp-basic-heat-exchanger4"
 
+		local HeatExchanger4 = table.deepcopy(data.raw.boiler["heat-exchanger"])
+		HeatExchanger4.name = "tsp-basic-heat-exchanger4"
+		HeatExchanger4.icon = "__thermal-solar-power__/graphics/icons/heat-boiler4.png"
+		HeatExchanger4.icon_size = 32
+		HeatExchanger4.target_temperature = 615.0
+		HeatExchanger4.energy_source.min_working_temperature = 615.0
+		HeatExchanger4.energy_source.min_temperature_gradient = 1
+		HeatExchanger4.energy_source.max_temperature = 745.0
+		HeatExchanger4.energy_source.specific_heat = "160KJ"
+		HeatExchanger4.energy_source.max_transfer = "9600kW"
+		HeatExchanger4.output_fluid_box.base_area = 25
+		HeatExchanger4.energy_consumption = "7.2MW"
+		HeatExchanger4.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger4"}
+		HeatExchanger4.fast_replaceable_group = "boiler"
+		HeatExchanger4.next_upgrade = ""
+
+		data:extend({HeatExchanger2,HeatExchanger3,HeatExchanger4})
+	else
+		HeatExchanger.next_upgrade = "heat-exchanger"
+	end
+
+	data:extend({HeatExchanger})
 end
 
 ------------------------------------------------------
@@ -439,48 +445,28 @@ data:extend({pond})
 
 ---------------------------------
 
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 
 	local engine2 = table.deepcopy(data.raw.generator["steam-engine"])
 	engine2.name = "tsp-steam-engine-2"
 	engine2.minable.result = "tsp-steam-engine-2"
 	engine2.fluid_usage_per_tick = 0.65
-	engine2.maximum_temperature = 250
+	engine2.maximum_temperature = 315
 
 	local engine3 = table.deepcopy(data.raw.generator["steam-engine"])
 	engine3.name = "tsp-steam-engine-3"
 	engine3.minable.result = "tsp-steam-engine-3"
 	engine3.fluid_usage_per_tick = 0.8
-	engine3.maximum_temperature = 335
+	engine3.maximum_temperature = 465
 
 	local engine4 = table.deepcopy(data.raw.generator["steam-engine"])
 	engine4.name = "tsp-steam-engine-4"
 	engine4.minable.result = "tsp-steam-engine-4"
 	engine4.fluid_usage_per_tick = 0.875
-	engine4.maximum_temperature = 420
+	engine4.maximum_temperature = 615
 
 	data:extend({engine2,engine3,engine4})
 
-end
-
-
-
-if mods["bobpower"] then
-	-- Heat Exchangers
-	data.raw.boiler["tsp-basic-heat-exchanger2"].target_temperature = 315
-	data.raw.boiler["tsp-basic-heat-exchanger2"].energy_source.min_working_temperature = 315
-	data.raw.boiler["tsp-basic-heat-exchanger2"].energy_source.max_temperature = 380
-	data.raw.boiler["tsp-basic-heat-exchanger2"].energy_consumption = "3.6MW"
-
-	data.raw.boiler["tsp-basic-heat-exchanger3"].target_temperature = 465
-	data.raw.boiler["tsp-basic-heat-exchanger3"].energy_source.min_working_temperature = 465
-	data.raw.boiler["tsp-basic-heat-exchanger3"].energy_source.max_temperature = 565
-	data.raw.boiler["tsp-basic-heat-exchanger3"].energy_consumption = "5.4MW"
-
-	data.raw.boiler["tsp-basic-heat-exchanger4"].target_temperature = 615
-	data.raw.boiler["tsp-basic-heat-exchanger4"].energy_source.min_working_temperature = 615
-	data.raw.boiler["tsp-basic-heat-exchanger4"].energy_source.max_temperature = 745
-	data.raw.boiler["tsp-basic-heat-exchanger4"].energy_consumption = "7.2MW"
 end
 
 for _,name in pairs({
@@ -489,5 +475,7 @@ for _,name in pairs({
 	"tsp-basic-heat-exchanger3",
 	"tsp-basic-heat-exchanger4",
 }) do
-	data.raw.boiler[name].localised_description = { "item-description."..name, data.raw.boiler[name].target_temperature }
+	if data.raw.boiler[name] then
+		data.raw.boiler[name].localised_description = { "item-description."..name, data.raw.boiler[name].target_temperature }
+	end
 end

@@ -73,14 +73,14 @@ temp_effect = {
 	},
 }
 
-if settings.startup["heat-exchanger-enabled"].value then
+if settings.startup["heat-exchanger-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-basic-heat-exchanger2"
 	})
 end
 
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-steam-engine-2"
@@ -118,14 +118,14 @@ temp_effect = {
 
 }
 	
-if settings.startup["heat-exchanger-enabled"].value then
+if settings.startup["heat-exchanger-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-basic-heat-exchanger3"
 	})
 end
 
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-steam-engine-3"
@@ -163,14 +163,14 @@ temp_effect = {
 
 }
 
-if settings.startup["heat-exchanger-enabled"].value then
+if settings.startup["heat-exchanger-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-basic-heat-exchanger4"
 	})
 end
 
-if settings.startup["steam-turbines-enabled"].value then
+if settings.startup["steam-turbines-enabled"].value and not mods["bobpower"] then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-steam-engine-4"
