@@ -115,7 +115,7 @@ Forked from CW-thermal-solar-power v0.2.16 by CyberWizard2261 and merged in CWTS
 * Generating electricity from heat:<br>
 ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-thermal-solar-power.png)
 
-* Getting Salt:<br>
+* Getting Salt:
 ![Example of Salt Evaporation](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-salt-evaporation.png)
 
 # Future Development
