@@ -303,24 +303,23 @@ if settings.startup["heat-exchanger-enabled"].value then
 	HeatExchanger.energy_consumption = "1.8MW"
 	HeatExchanger.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger"}
 	HeatExchanger.fast_replaceable_group = "boiler"
+	HeatExchanger.next_upgrade = "tsp-basic-heat-exchanger2"
 
+	local HeatExchanger2 = table.deepcopy(data.raw.boiler["heat-exchanger"])
+	HeatExchanger2.name = "tsp-basic-heat-exchanger2"
+	HeatExchanger2.icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png"
+	HeatExchanger2.icon_size = 32
+	HeatExchanger2.output_fluid_box.base_area = 15
+	HeatExchanger2.target_temperature = 315
+	HeatExchanger2.energy_source.min_working_temperature = 315
+	HeatExchanger2.energy_source.min_temperature_gradient = 1
+	HeatExchanger2.energy_source.max_temperature = 380
+	HeatExchanger2.energy_source.specific_heat = "120KJ"
+	HeatExchanger2.energy_source.max_transfer = "7200kW"
+	HeatExchanger2.energy_consumption = "3.6MW"
+	HeatExchanger2.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger2"}
+	HeatExchanger2.fast_replaceable_group = "boiler"
 	if not mods["bobpower"] then
-		HeatExchanger.next_upgrade = "tsp-basic-heat-exchanger2"
-
-		local HeatExchanger2 = table.deepcopy(data.raw.boiler["heat-exchanger"])
-		HeatExchanger2.name = "tsp-basic-heat-exchanger2"
-		HeatExchanger2.icon = "__thermal-solar-power__/graphics/icons/heat-boiler2.png"
-		HeatExchanger2.icon_size = 32
-		HeatExchanger2.output_fluid_box.base_area = 15
-		HeatExchanger2.target_temperature = 315
-		HeatExchanger2.energy_source.min_working_temperature = 315
-		HeatExchanger2.energy_source.min_temperature_gradient = 1
-		HeatExchanger2.energy_source.max_temperature = 380
-		HeatExchanger2.energy_source.specific_heat = "120KJ"
-		HeatExchanger2.energy_source.max_transfer = "7200kW"
-		HeatExchanger2.energy_consumption = "3.6MW"
-		HeatExchanger2.minable = {hardness = 0.2, mining_time = 0.5, result = "tsp-basic-heat-exchanger2"}
-		HeatExchanger2.fast_replaceable_group = "boiler"
 		HeatExchanger2.next_upgrade = "tsp-basic-heat-exchanger3"
 
 		local HeatExchanger3 = table.deepcopy(data.raw.boiler["heat-exchanger"])
@@ -355,12 +354,12 @@ if settings.startup["heat-exchanger-enabled"].value then
 		HeatExchanger4.fast_replaceable_group = "boiler"
 		HeatExchanger4.next_upgrade = ""
 
-		data:extend({HeatExchanger2,HeatExchanger3,HeatExchanger4})
+		data:extend({HeatExchanger3,HeatExchanger4})
 	else
-		HeatExchanger.next_upgrade = "heat-exchanger"
+		HeatExchanger2.next_upgrade = "heat-exchanger"
 	end
 
-	data:extend({HeatExchanger})
+	data:extend({HeatExchanger,HeatExchanger2})
 end
 
 ------------------------------------------------------

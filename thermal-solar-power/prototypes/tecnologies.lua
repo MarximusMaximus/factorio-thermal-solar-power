@@ -73,7 +73,7 @@ temp_effect = {
 	},
 }
 
-if settings.startup["heat-exchanger-enabled"].value and not mods["bobpower"] then
+if settings.startup["heat-exchanger-enabled"].value then
 	table.insert(temp_effect, {
 		type = "unlock-recipe",
 		recipe = "tsp-basic-heat-exchanger2"
