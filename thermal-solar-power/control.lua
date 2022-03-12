@@ -1,5 +1,9 @@
 local temperature = 15
 
+-- 4.7056 and 0.85 are "fairly realistic" (enough for a game) for Earth, for a perfect Black Body Object that continually gains heat with near zero heat loss
+local TEMPERATURE_FACTOR = 4.7056
+local TEMPERATURE_MULTIPLIER = 0.85
+
 local function on_built(event)
 	local entity = event.created_entity
 
@@ -57,10 +61,10 @@ script.on_configuration_changed(onChange)
 
 script.on_event({defines.events.on_tick}, function (event)
 	if event.tick % 60 == 0 and global.CW_Thermal_solar_panel_table ~= nil then
-		for x , panel in pairs(global.CW_Thermal_solar_panel_table) do
+		for _, panel in pairs(global.CW_Thermal_solar_panel_table) do
 			if panel.valid then
-				panel.temperature = panel.temperature + 4.7056*(0.85 - panel.surface.darkness)
-				--game.print(4.7056*(0.85 - panel.surface.darkness))
+				panel.temperature = panel.temperature + TEMPERATURE_FACTOR*(TEMPERATURE_MULTIPLIER - panel.surface.darkness)
+				--game.print(TEMPERATURE_FACTOR*(TEMPERATURE_MULTIPLIER - panel.surface.darkness))
 			end
 		end
 	end
@@ -91,9 +95,3 @@ script.on_event({defines.events.on_put_item},function (event)
 		end
 	end
 end)
-
-
-
-
-
-
