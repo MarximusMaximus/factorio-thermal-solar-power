@@ -5,6 +5,8 @@ https://marximus.com
 
 Adds the ability to build a thermal solar complex an early game solution for clean energy; automaticaly adjusts the heat exchangers temperature to produce steam in the same temperatures as with Bob's Power.
 
+Note: Thermal Solar Panels take time to heat. Heat pipes will waste heat as they transfer heat. Molten Salt Heat Accumulators take A LONG time to heat up and will bottleneck early heat generation -- you only really need them if nights in your game are long; vanilla game/Nauvis nights are short enough to not need them.
+
 Forked from CW-thermal-solar-power v0.2.16 by CyberWizard2261 and merged in CWTSP_balance v1.0.1 by Caxx (Public Domain).
 
 # Features
@@ -112,16 +114,21 @@ Forked from CW-thermal-solar-power v0.2.16 by CyberWizard2261 and merged in CWTS
 
 # Example Usage
 
-* Generating electricity from heat:
+* Generating electricity from heat on a normal planet (vanilla/Nauvis) (NOTE: there are no heat pipes to lose any heat nor batteries necessary to store any heat, the panels will stay hot enough for "short" nights):
 > ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-thermal-solar-power.png)
+
+* Generating electricity from heat on a planet with very long nights (NOTE: this setup will take a long time to heat up; more batteries = longer time to reach target temperature):
+> ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power-battery/main/assets/example-thermal-solar-power.png)
 
 * Getting Salt:
 > ![Example of Salt Evaporation](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-salt-evaporation.png)
+> ![Example of Salt Evaporation](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-salt-evaporation-piped.png)
+
 
 # Future Development
 (if there is interest)
 
 * More solar power tiers?
-* New/hires sprites
+* New/hi-res sprites
 * UPS Improvements
 * Underground heat pipe (both basic and vanilla tier)
