@@ -118,7 +118,7 @@ Forked from CW-thermal-solar-power v0.2.16 by CyberWizard2261 and merged in CWTS
 > ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-thermal-solar-power.png)
 
 * Generating electricity from heat on a planet with very long nights (NOTE: this setup will take a long time to heat up; more batteries = longer time to reach target temperature):
-> ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power-battery/main/assets/example-thermal-solar-power.png)
+> ![Example of Thermal Solar Power](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-thermal-solar-power-battery.png)
 
 * Getting Salt:
 > ![Example of Salt Evaporation](https://raw.githubusercontent.com/MarximusMaximus/factorio-thermal-solar-power/main/assets/example-salt-evaporation.png)
