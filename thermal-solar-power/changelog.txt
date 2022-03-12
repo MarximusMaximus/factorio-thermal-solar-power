@@ -1,16 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+  Changes:
+    - Update README and examples.
+    - Add approximate heat storage values to descriptions of accumulators.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Changes:
-    - Fix tier 2 heat exchanger when using bobpower mod
+    - Fix tier 2 heat exchanger when using bobpower mod.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Changes:
     - Base temperatures now just match Bob's for convenience (they no longer change based on 
-      whether or not bobpower is enabled
+      whether or not bobpower is enabled.
     - Better bobpower compatibility by not duplicating buildings (basically doing the steam engine
       and heat exchanger disable settings automatically, but in a smarter way for bobpower).
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Changes:
-    - Merged in bobpower compatiblity from CWTSP_balance by Caxx (Public Domain)
+    - Merged in bobpower compatiblity from CWTSP_balance by Caxx (Public Domain).
     - Fixed descriptions of heat exchangers to correctly display their temperatures.
