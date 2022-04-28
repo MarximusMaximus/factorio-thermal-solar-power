@@ -4,4 +4,12 @@
     "files.trimFinalNewlines": true,
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
+    "cSpell.words": [
+        "Caxx",
+        "CWTSP",
+        "factorio",
+        "Marximus",
+        "Maximus",
+        "Nauvis"
+    ],
 }
