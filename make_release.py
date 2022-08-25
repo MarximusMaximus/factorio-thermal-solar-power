@@ -2,6 +2,7 @@
 
 import json
 import subprocess
+import sys
 
 name = "thermal-solar-power"
 
@@ -10,4 +11,6 @@ text = f.read()
 data = json.loads(text)
 version = data["version"]
 
-subprocess.run(["zip", "-vr", f"{name}_{version}.zip", f"{name}"])
+res = subprocess.run(["zip", "-vr", f"{name}_{version}.zip", f"{name}"])
+
+sys.exit(res.returncode)
