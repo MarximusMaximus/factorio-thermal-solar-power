@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+  Changes:
+    - Bug fix for when scripts build entities.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.2
   Changes:
     - Update README and examples.
@@ -10,7 +14,7 @@ Version: 1.1.1
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Changes:
-    - Base temperatures now just match Bob's for convenience (they no longer change based on 
+    - Base temperatures now just match Bob's for convenience (they no longer change based on
       whether or not bobpower is enabled.
     - Better bobpower compatibility by not duplicating buildings (basically doing the steam engine
       and heat exchanger disable settings automatically, but in a smarter way for bobpower).
