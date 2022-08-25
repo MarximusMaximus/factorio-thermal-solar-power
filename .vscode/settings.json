@@ -33,4 +33,22 @@
         "titleBar.inactiveForeground": "#e7e7e799"
     },
     "peacock.color": "#812131",
+    "Lua.diagnostics.globals": [
+        "global",
+        "game",
+        "settings",
+        "defines",
+        "script",
+        "data",
+        "mods",
+        "table_size",
+        "log",
+        "localised_print",
+        "serpent",
+        "__DebugAdapter",
+        "__Profiler"
+    ],
+    "Lua.diagnostics.disable": [
+        "lowercase-global"
+    ],
 }
