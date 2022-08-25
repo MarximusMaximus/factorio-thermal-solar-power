@@ -45,7 +45,7 @@ function on_remove(event)
     end
 end
 
-function onChange(evt)
+function on_configuration_changed(_)
     for _, force in pairs(game.forces) do
         force.reset_technology_effects()
     end
@@ -119,4 +119,4 @@ script.on_event(
     on_remove
 )
 
-script.on_configuration_changed(onChange)
+script.on_configuration_changed(on_configuration_changed)
