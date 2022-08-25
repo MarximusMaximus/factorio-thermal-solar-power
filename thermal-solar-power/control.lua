@@ -4,9 +4,7 @@ local temperature = 15
 local TEMPERATURE_FACTOR = 4.7056
 local TEMPERATURE_MULTIPLIER = 0.85
 
-local function on_built(event)
-	local entity = event.created_entity
-
+local function handle_build(entity)
 	if global.CW_Thermal_solar_panel_table == nil then
 		global.CW_Thermal_solar_panel_table = {}
 	end
@@ -26,6 +24,12 @@ local function on_built(event)
 		entity.name == "tsp-molten-salt-heat-accumulator3" then
 			entity.temperature = temperature
 	end
+end
+local function on_script_built(event)
+	handle_build(event.entity)
+end
+local function on_built(event)
+	handle_build(event.created_entity)
 end
 
 local function on_remove(event)
@@ -48,11 +52,12 @@ local function onChange(evt)
 end
 
 
-local pre_remove_events = {defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined,defines.events.on_entity_died}
+local pre_remove_events = {defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined,defines.events.on_entity_died,defines.events.on_script_raised_destroy}
 script.on_event(pre_remove_events, on_remove)
 
 local build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity}
 script.on_event(build_events, on_built)
+script.on_event({defines.events.script_raised_built, defines.events.script_raised_revive}, on_script_built)
 
 
 
