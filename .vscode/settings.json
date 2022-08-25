@@ -5,6 +5,7 @@
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
     "cSpell.words": [
+        "bobpower",
         "Caxx",
         "CWTSP",
         "factorio",
@@ -12,4 +13,24 @@
         "Maximus",
         "Nauvis"
     ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#aa2b40",
+        "activityBar.background": "#aa2b40",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#13330d",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "editorGroup.border": "#aa2b40",
+        "panel.border": "#aa2b40",
+        "sash.hoverBorder": "#aa2b40",
+        "sideBar.border": "#aa2b40",
+        "tab.activeBorder": "#aa2b40",
+        "titleBar.activeBackground": "#812131",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.border": "#812131",
+        "titleBar.inactiveBackground": "#81213199",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#812131",
 }
