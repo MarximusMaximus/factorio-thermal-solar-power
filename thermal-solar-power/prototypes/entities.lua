@@ -92,7 +92,7 @@ local solar_panel_1 =
 	corpse = "medium-remnants",
 	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
 
-    	consumption = "0.000001kW", -- mandatory property, must be greater than 0. 
+    	consumption = "0.000001kW", -- mandatory property, must be greater than 0
     	energy_source = {type = "void"}, -- mandatory property
 	neighbour_bonus = 0, -- default value: 1
 
