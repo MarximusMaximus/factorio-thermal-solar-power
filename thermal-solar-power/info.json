@@ -1,9 +1,9 @@
 {
 	"name": "thermal-solar-power",
-	"version": "1.2.0",
+	"version": "1.3.0",
 	"title": "Thermal Solar Power",
 	"author": "MarximusMaximus, CyberWizard2261, Caxx",
-	"description": "Adds the ability to build a thermal solar complex an early game solution for clean energy; automatically adjusts the heat exchangers temperature to produce steam in the same temperatures as with Bob's Power.\n\nForked from CW-thermal-solar-power and merged in CWTSP_balance.",
+	"description": "Adds the ability to build a thermal solar complex, an early game solution for clean energy; automatically adjusts the heat exchangers temperature to produce steam at the same temperatures as with Bob's Power.\n\nForked from CW-thermal-solar-power and merged in CWTSP_balance.",
 	"homepage": "https://marximus.com",
 	"factorio_version": "1.1",
 	"dependencies": [
