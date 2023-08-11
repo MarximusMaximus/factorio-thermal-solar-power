@@ -1,44 +1,32 @@
 ---------------------------------------------------------------------------------------
 
--- SOLAR PANNELS SPRITES
+-- SOLAR PANELS SPRITES
 
-local thermal_solar_panel_1_sprite = 
-{
-	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-1/thermal_solar-panel_1.png",
-	priority = "high",
-	height = 112,
-	width = 116,
-	shift = {-0.09375,-0.09375},
-}
+local solar_panel_1_sprite = {
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-1.png",
+	priority = "high", height = 123, width = 128, shift = util.by_pixel(3, -8.5)}
 
-local thermal_solar_panel_2_sprite = 
-{
-	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-2/thermal_solar-panel_2.png",
-	priority = "high",
-	height = 112,
-	width = 116,
-	shift = {-0.09375,-0.09375},
-}
+local solar_panel_2_sprite = {
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-2.png",
+	priority = "high", height = 123, width = 128, shift = util.by_pixel(3, -8.5)}
 
-local thermal_solar_panel_3_sprite = 
-{
-	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-3/thermal_solar-panel_3.png",
-	priority = "high",
-	height = 112,
-	width = 116,
-	shift = {-0.09375,-0.09375},
-}
+local solar_panel_3_sprite = {
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-3.png",
+	priority = "high", height = 123, width = 128, shift = util.by_pixel(3, -8.5)}
 
-local thermal_solar_panel_4_sprite = 
-{
-	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-4/thermal_solar-panel_4.png",
-	priority = "high",
-	height = 112,
-	width = 116,
-	shift = {-0.09375,-0.09375},
-}
+local solar_panel_4_sprite = {
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-4.png",
+	priority = "high", height = 123, width = 128, shift = util.by_pixel(3, -8.5)}
 
----------------------------------------------------------------------------------------
+local solar_panel_shadow_sprite = { -- black shadow mask image (53 % opaque) 
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-shadow.png",
+	height = 123, width = 128, shift = util.by_pixel(3, -8.5),
+	draw_as_shadow = true}
+
+local solar_panel_glow_sprite = { -- filled black image (100 % opaque), mandatory
+	filename = "__thermal-solar-power__/graphics/entity/thermal-solar-panel-light-blank.png",
+	height = 123, width = 128, shift = util.by_pixel(3, -8.5), blend_mode = "additive",
+	draw_as_glow = true}
 
 ---------------------------------------------------------------------------------------
 
@@ -87,95 +75,80 @@ end
 
 local solar_panel_1 = 
 {
-	type = "heat-pipe",
-	name = "tsp-thermal-solar-panel",	
-	max_health = 200,
+	type = "reactor",
+	name = "tsp-thermal-solar-panel",
+
 	flags = {"placeable-neutral", "player-creation"},
 	icon = "__thermal-solar-power__/graphics/icons/solar-panel1.png",
 	icon_size = 32,
+	max_health = 200,
 	fast_replaceable_group ="tsp-thermal-solar-panel",
 	next_upgrade = "tsp-thermal-solar-panel2",
-	
 	selection_box = {{-1.5,	-1.5},{1.5,1.5},},
 	collision_box = {{-1.2,-1.2},{1.2,1.2},},
 	collision_mask = { "item-layer", "object-layer", "player-layer", "water-tile"},
-	minable = {hardness = 0.25, mining_time = 1, result = "tsp-thermal-solar-panel"},
-	resistances ={{type = "fire",percent = 100}},
-	
+	minable = {hardness = 0.25, mining_time = 0.5, result = "tsp-thermal-solar-panel"},
+	resistances = {{type = "fire", percent = 100}},
 	corpse = "medium-remnants",
 	vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-	
-	picture = thermal_solar_panel_1_sprite,
-	connection_sprites = sprites_todos(thermal_solar_panel_1_sprite),
-	heat_glow_sprites =  sprites_todos(thermal_solar_panel_1_sprite),
-	
-	minimum_glow_temperature = 300,
-	
-	heat_buffer = {
+
+    	consumption = "0.000001kW", -- mandatory property, must be greater than 0
+    	energy_source = {type = "void"}, -- mandatory property
+	neighbour_bonus = 0, -- default value: 1
+
+    	picture = {layers = {solar_panel_1_sprite, solar_panel_shadow_sprite}},
+
+    	working_light_picture = solar_panel_glow_sprite, -- mandatory property
+
+    	heat_buffer = -- mandatory property
+    	{
 		max_temperature = 800,
-		specific_heat = "25KJ",
+		specific_heat = "25kJ",
 		max_transfer = "10MW",
 		min_temperature_gradient = 0.1,
-		connections = {
-			{
-				position = {0, -1},
-				direction = defines.direction.north
-			},
-			{
-				position = {0, 1},
-				direction = defines.direction.south
-			},
-			{
-				position = {1, 0},
-				direction = defines.direction.east
-			},
-			{
-				position = {-1, 0},
-				direction = defines.direction.west
-			},
-		},
-	},
-	
+		minimum_glow_temperature = 350,
+		connections = 
+		{
+			{position = {0, -1}, direction = defines.direction.north},
+			{position = {0, 1}, direction = defines.direction.south},
+			{position = {1, 0}, direction = defines.direction.east},
+			{position = {-1, 0}, direction = defines.direction.west}
+		}
+    	},
+
+	open_sound = nil,
+    	close_sound = nil
 }
 
 local solar_panel_2 = table.deepcopy(solar_panel_1)
 solar_panel_2.name = "tsp-thermal-solar-panel2"
 solar_panel_2.icon = "__thermal-solar-power__/graphics/icons/solar-panel2.png"
 solar_panel_2.minable.result = "tsp-thermal-solar-panel2"
-solar_panel_2.heat_buffer.specific_heat = "37.5KJ"
+solar_panel_2.heat_buffer.specific_heat = "37.5KJ" -- times 4 during the day = 150kw
 solar_panel_2.heat_buffer.max_transfer = "10MW"
 solar_panel_2.next_upgrade = "tsp-thermal-solar-panel3"
 --change sprites
-solar_panel_2.picture = thermal_solar_panel_2_sprite
-solar_panel_2.connection_sprites = sprites_todos(thermal_solar_panel_2_sprite)
-solar_panel_2.heat_glow_sprites =  sprites_todos(thermal_solar_panel_2_sprite)
-
+solar_panel_2.picture.layers[1] = solar_panel_2_sprite
 
 local solar_panel_3 = table.deepcopy(solar_panel_1)
 solar_panel_3.name = "tsp-thermal-solar-panel3"
 solar_panel_3.icon = "__thermal-solar-power__/graphics/icons/solar-panel3.png"
 solar_panel_3.minable.result = "tsp-thermal-solar-panel3"
-solar_panel_3.heat_buffer.specific_heat = "50KJ"
+solar_panel_3.heat_buffer.specific_heat = "50KJ" -- times 4 during the day = 200kw
 solar_panel_3.heat_buffer.max_transfer = "12MW"
 solar_panel_3.next_upgrade = "tsp-thermal-solar-panel4"
 --change sprites
-solar_panel_3.picture = thermal_solar_panel_3_sprite
-solar_panel_3.connection_sprites = sprites_todos(thermal_solar_panel_3_sprite)
-solar_panel_3.heat_glow_sprites =  sprites_todos(thermal_solar_panel_3_sprite)
-
+solar_panel_3.picture.layers[1] = solar_panel_3_sprite
 
 local solar_panel_4 = table.deepcopy(solar_panel_1)
 solar_panel_4.name = "tsp-thermal-solar-panel4"
 solar_panel_4.icon = "__thermal-solar-power__/graphics/icons/solar-panel4.png"
 solar_panel_4.minable.result = "tsp-thermal-solar-panel4"
-solar_panel_4.heat_buffer.specific_heat = "62.5KJ"
+solar_panel_4.heat_buffer.specific_heat = "62.5KJ" -- times 4 during the day = 250kw
 solar_panel_4.heat_buffer.max_transfer = "14MW"
 solar_panel_4.next_upgrade = ""
 --change sprites
-solar_panel_4.picture = thermal_solar_panel_4_sprite
-solar_panel_4.connection_sprites = sprites_todos(thermal_solar_panel_4_sprite)
-solar_panel_4.heat_glow_sprites =  sprites_todos(thermal_solar_panel_4_sprite)
-
+solar_panel_4.picture.layers[1] = solar_panel_4_sprite
 
 data:extend({solar_panel_1, solar_panel_2, solar_panel_3, solar_panel_4})
 
@@ -248,9 +221,8 @@ local heat_accumulator_1 =
 				direction = defines.direction.west
 			}
 		}
-	},
+	}
 }
-
 
 local heat_accumulator_2 = table.deepcopy(heat_accumulator_1)
 heat_accumulator_2.name = "tsp-molten-salt-heat-accumulator2"

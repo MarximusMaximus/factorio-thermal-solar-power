@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+  Changes:
+    - By ZarSasha: Added missing shadows to thermal solar panels (prototype: heat-pipe -> reactor,
+      changed properties, new & modified graphical assets).
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Changes:
     - Change to use modern event names
